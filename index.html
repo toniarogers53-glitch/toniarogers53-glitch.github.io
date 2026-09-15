@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SEMENYO MS LTD</title>
+<meta name="description" content="Mobile ideas made simple">
+<meta name="color-scheme" content="dark">
+<link rel="stylesheet" href="/fonts/archivo.css">
+<style>
+  /* Committed to one visual world: the content is game art, and it belongs on a ground
+     that lets it glow. Every colour is painted explicitly, nothing inherited. */
+  :root {
+    --ground: hsl(30 24% 6%);
+    --raised: hsl(30 20% 10%);
+    --ink:    hsl(30 12% 95%);
+    --muted:  hsl(30 10% 58%);
+    --line:   hsl(30 16% 17%);
+    --accent: hsl(210 82% 70%);
+    --sans: Archivo, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font: 400 16px/1.55 var(--sans);
+  }
+  .page {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: clamp(3rem, 9vw, 6rem) clamp(1.25rem, 5vw, 2rem) 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2.75rem, 7vw, 4rem);
+  }
+
+  header { display: flex; flex-direction: column; gap: .6rem; }
+  .name {
+    margin: 0;
+    font-size: clamp(2.1rem, 7vw, 3.2rem);
+    font-weight: 700;
+    font-stretch: 118%;
+    line-height: 1;
+    letter-spacing: -.018em;
+    text-wrap: balance;
+    color: var(--ink);
+  }
+  .lede { margin: 0; color: var(--accent); font-size: 1.0625rem; }
+  .about { margin: .4rem 0 0; max-width: 58ch; color: var(--muted); font-size: 1rem; }
+
+  .catalogue { display: flex; flex-direction: column; gap: 2.5rem; }
+  article { display: flex; flex-direction: column; gap: .9rem; }
+  .head { display: flex; align-items: center; gap: .95rem; }
+  .icon { width: 60px; height: 60px; border-radius: 13px; flex: 0 0 60px;
+           background: var(--raised); }
+  .icon.blank { border: 1px solid var(--line); }
+  h2 { margin: 0; font-size: 1.125rem; font-weight: 600; letter-spacing: -.008em; }
+  .short { margin: .15rem 0 0; color: var(--muted); font-size: .9375rem;
+            max-width: 52ch; }
+
+  /* The screenshots are the point: real phone frames, scrolling in their own track so
+     the page body never moves sideways. */
+  .shots {
+    display: flex; gap: .55rem; overflow-x: auto; padding-bottom: .3rem;
+    scrollbar-width: thin; scroll-snap-type: x proximity;
+  }
+  .shots img {
+    width: 132px; height: auto; flex: 0 0 auto; border-radius: 6px;
+    background: var(--raised); scroll-snap-align: start;
+  }
+
+  /* Controls, so they are shaped like controls: a filled pill for the store link, a
+     quiet outline for the policy. The pill radius is the third on the page and the only
+     one that is not an image — it marks "this is a thing you press". */
+  .actions { margin: .1rem 0 0; display: flex; gap: .55rem; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: .45rem;
+    padding: .52rem .95rem; border-radius: 999px;
+    font-size: .875rem; font-weight: 600; line-height: 1;
+    text-decoration: none; border: 1px solid transparent;
+    transition: background-color .12s ease, border-color .12s ease, color .12s ease;
+  }
+  .btn svg { width: 15px; height: 15px; flex: 0 0 15px; }
+  .btn-play { background: var(--accent); color: var(--ground); }
+  .btn-play:hover { background: hsl(210 82% 78%); }
+  .btn-ghost { border-color: var(--line); color: var(--muted); }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+  .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
+  .none { margin: 0; max-width: 44ch; color: var(--muted); font-size: 1.0625rem; }
+
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: .2em; }
+  a:hover { text-decoration-thickness: 2px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .contact { display: flex; flex-direction: column; gap: .6rem; align-items: flex-start; }
+  .contact a {
+    display: inline-flex; align-items: center; gap: .65rem;
+    color: var(--ink); text-decoration: none; font-size: 1rem;
+  }
+  .contact a svg { width: 17px; height: 17px; flex: 0 0 17px; color: var(--muted); }
+  .contact a:hover { color: var(--accent); }
+  .contact a:hover svg { color: var(--accent); }
+
+  footer { border-top: 1px solid var(--line); padding-top: 1.1rem;
+            color: var(--muted); font-size: .8125rem; }
+  footer p { margin: 0; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { scroll-behavior: auto !important; }
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1 class="name">SEMENYO MS LTD</h1>
+      <p class="lede">Mobile ideas made simple</p>
+      <p class="about">We create small applications that solve clear everyday needs. Each product is designed to stay lightweight, understandable and easy to use.</p>
+    </header>
+
+    <section class="catalogue">
+      <p class="none">Nothing published yet. Titles appear here as they are released.</p>
+    </section>
+
+    <section class="contact">
+      <a href="mailto:toniarogers53@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="m3 7 8.2 5.6a1.4 1.4 0 0 0 1.6 0L21 7"/></svg><span>toniarogers53@gmail.com</span></a>
+      <a href="tel:+4407346310997"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3h3l1.5 4-2 1.4a12 12 0 0 0 5.6 5.6L16 12l4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 3.5 5.2 2 2 0 0 1 5.5 3Z"/></svg><span>+4407346310997</span></a>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 SEMENYO MS LTD &middot; semenyo-ms.site</p>
+    </footer>
+  </div>
+</body>
+</html>
